@@ -7,7 +7,7 @@ public class Prova1 {
 	public static void main(String[] args) {
 		Ucb ucb = new Ucb();
 		
-		View.popularlaboratorios(ucb);
 		View.menu(ucb);
+
 	}
 }

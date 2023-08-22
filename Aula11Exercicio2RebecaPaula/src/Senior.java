@@ -1,17 +1,17 @@
 
 public class Senior extends Programador{
-	private int qtdCertificaçoes;
+	private int qtdCertificacoes;
 	private int qtdProjetos;
 	@Override
 	public String toString() {
-		return "---- Calsse: Senior ----\n"+super.toString() + "\nQuantidade de Certificado: "+getQtdProjetos()+"\nQuantidade de Certificaçoes: "+getQtdCertificaçoes()+"\nSalario: "+getSalario();
+		return "---- Classe: Senior ----\n"+super.toString() + "\nQuantidade de Certificado: "+getQtdProjetos()+"\nQuantidade de Certificacoes: "+getQtdCertificacoes()+"\nSalario: "+getSalario();
 	}
 	
-	public int getQtdCertificaçoes() {
-		return qtdCertificaçoes;
+	public int getQtdCertificacoes() {
+		return qtdCertificacoes;
 	}
-	public void setQtdCertificaçoes(int qtdCertificaçoes) {
-		this.qtdCertificaçoes = qtdCertificaçoes;
+	public void setQtdCertificacoes(int qtdCertificacoes) {
+		this.qtdCertificacoes = qtdCertificacoes;
 	}
 	public int getQtdProjetos() {
 		return qtdProjetos;
@@ -27,7 +27,7 @@ public class Senior extends Programador{
 		return getQtdProjetos() / 2;
 	}
 	public double getSalarioPorCertificacao(){
-		return 100 * getQtdCertificaçoes();
+		return 100 * getQtdCertificacoes();
 	}
 	
 }

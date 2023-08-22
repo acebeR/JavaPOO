@@ -7,7 +7,7 @@ public class View {
 		i.setCodigo(Leitor.lerInt("Codigo: "));
 		i.setDescricao(Leitor.lerString("Descricao: "));
 		i.setPreco(Leitor.lerDouble("Preco: "));
-		i.setTipo(Leitor.lerChar("Tipo: tecnologia(T) Outros(O)", "Opçao incorreta!", 'T', 'O'));
+		i.setTipo(Leitor.lerChar("Tipo: tecnologia(T) Outros(O)", "Opï¿½ao incorreta!", 'T', 'O'));
 		return i;
 	}
 	public static void popularItens(Laboratorio l){
@@ -92,17 +92,18 @@ public class View {
 		}
 	}
 	public static void menu(Ucb ucb){
-		char m,r;
+		char m;
+		char r = 'S';
 		do{
 			menuCabecalho();
-			m = Leitor.lerChar("Escolha>>");
+			m = Leitor.lerChar("Escolha >>");
 			switch (m) {
 			case 'A':
-				System.out.println("____ Laboratorios Inscritos____");
+				System.out.println("====== Laboratorios Inscritos ======\n");
 				apresentarLaboratorios(ucb.getLaboratorios());
 				break;
 			case 'B':
-				System.out.println("____Laboratorios com responsaveis como Analista____");
+				System.out.println("====== Laboratorios com responsaveis como Analista ====== \n");
 				apresentarLaboratorios(ucb.getLaboratoriosCargo('A'));
 				break;
 			case 'C':
@@ -112,19 +113,31 @@ public class View {
 				System.out.println("Custo total dos Laboratorios da UCB: "+ ucb.custoTotalLaboratorios());
 				break;
 			case 'E':
-				System.out.println("____ Laboratorios_____");
+				System.out.println("====== Laboratorios ====== \n");
 				getLaboratorios(ucb.getLaboratorios());
+				break;
+			case 'F':
+				System.out.println("====== Cadastro ======\n");
+				popularlaboratorios(ucb);
+				break;
+			case 'G':
+				r = 'N';
+				System.out.println("____ Fim do Programa _____\n\n");
 				break;
 			default:
 				break;
-			}
-			r = Leitor.lerChar("Deseja continuar pesquisando? (S)sim (N)nao", "Opcao invalida!", 'N', 'S');	
+			}	
 		}while(r == 'S');
 	}
 	public static void menuCabecalho(){
+		System.out.println("___________________Menu_________________________");
 		System.out.println("(A) Apresentar todos os dados do laboratorio\n" +
-				"(B)Apresentar os dados dos laboratorios que tem responsaveis ANALISTA\n" +
-				"(C) Quantidade de itens de TECNOLOGIA\n(D)O custo total dos laboratorios\n" +
-				"(E) Localidade e quantitativo de itens de todos os Laboratorios");
+				"(B) Apresentar os dados dos laboratorios que tem responsaveis ANALISTA\n" +
+				"(C) Quantidade de itens de TECNOLOGIA\n" +
+				"(D) O custo total dos laboratorios\n" +
+				"(E) Localidade e quantitativo de itens de todos os Laboratorios\n" +
+				"(F) Cadastro \n" +
+				"(G) Sair do Programa\n");
+				System.out.println("____________________________________________");
 	}
 }
